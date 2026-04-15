@@ -8,13 +8,23 @@ import { apiRouter } from "./routes/index.js";
 export function createApp() {
   const app = express();
 
+  // app.use(cors({
+  //   origin: [
+  //     "http://localhost:5173",
+  //     "https://leavedemo.vercel.app"
+  //   ],
+  //   credentials: true
+  // }));
   app.use(cors({
     origin: [
       "http://localhost:5173",
       "https://leavedemo.vercel.app"
     ],
-    credentials: true
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
   }));
+  app.options("*", cors());
   app.use(express.json({ limit: "1mb" }));
   app.use(cookieParser());
 
