@@ -16,11 +16,29 @@ export function signToken(user) {
   );
 }
 
+// export function setAuthCookie(res, token) {
+//   res.cookie("lms_token", token, {
+//     httpOnly: true,
+//     sameSite: env.cookieSecure ? "none" : "lax",
+//     secure: env.cookieSecure,
+//     maxAge: 7 * 24 * 60 * 60 * 1000
+//   });
+// }
+
+// export function clearAuthCookie(res) {
+//   res.clearCookie("lms_token", {
+//     httpOnly: true,
+//     sameSite: env.cookieSecure ? "none" : "lax",
+//     secure: env.cookieSecure
+//   });
+// }
+
 export function setAuthCookie(res, token) {
   res.cookie("lms_token", token, {
     httpOnly: true,
-    sameSite: env.cookieSecure ? "none" : "lax",
-    secure: env.cookieSecure,
+    secure: true,
+    sameSite: "none",
+    path: "/",
     maxAge: 7 * 24 * 60 * 60 * 1000
   });
 }
@@ -28,8 +46,9 @@ export function setAuthCookie(res, token) {
 export function clearAuthCookie(res) {
   res.clearCookie("lms_token", {
     httpOnly: true,
-    sameSite: env.cookieSecure ? "none" : "lax",
-    secure: env.cookieSecure
+    secure: true,
+    sameSite: "none",
+    path: "/"
   });
 }
 
