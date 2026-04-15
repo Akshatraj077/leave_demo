@@ -1,0 +1,17 @@
+{
+  "name": "leave-management-hr-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "College-submission MERN Leave Management and Employee HR System.",
+  "scripts": {
+    "dev": "concurrently \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "seed": "npm --prefix server run seed",
+    "test": "npm --prefix server test",
+    "build": "npm --prefix client run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
