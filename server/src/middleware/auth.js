@@ -38,8 +38,7 @@ export function setAuthCookie(res, token) {
     httpOnly: true,
     secure: true,
     sameSite: "none",
-    path: "/",
-    domain: "leave-demo-back.onrender.com",   // 👈 ADD THIS LINE
+    path: "/",   // 👈 ADD THIS LINE
     maxAge: 7 * 24 * 60 * 60 * 1000
   });
 }
@@ -49,8 +48,7 @@ export function clearAuthCookie(res) {
     httpOnly: true,
     secure: true,
     sameSite: "none",
-    path: "/",
-    domain: "leave-demo-back.onrender.com"
+    path: "/"
   });
 }
 
